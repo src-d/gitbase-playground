@@ -7,12 +7,12 @@ It is recommended to read about `bblfsh` and `gitbase` from its own documentatio
 Launch [bblfshd](https://github.com/bblfsh/bblfshd) and install the drivers. More info in the [bblfshd documentation](https://doc.bblf.sh/user/getting-started.html):
 
 ```bash
-$ docker run --privileged
-    --publish 9432:9432
-    --volume /var/lib/bblfshd:/var/lib/bblfshd
-    --name bblfsh
+$ docker run --privileged \
+    --publish 9432:9432 \
+    --volume /var/lib/bblfshd:/var/lib/bblfshd \
+    --name bblfsh \
     bblfsh/bblfshd
-$ docker exec -it bblfsh
+$ docker exec -it bblfsh \
     bblfshctl driver install --recommended
 ```
 
@@ -26,14 +26,11 @@ $ git clone git@github.com:src-d/go-git-fixtures.git ~/gitbase/repos/go-git-fixt
 Install and run [gitbase](https://github.com/src-d/gitbase):
 
 ```bash
-# This quickstart is using a custom gitbase image until the official `srcd/gitbase` image is provided
-# See: https://github.com/src-d/gitbase/issues/262
-$ docker run
-    --publish 3306:3306
-    --link bblfsh
-    --volume ~/gitbase/repos:/opt/repos
-    --env BBLFSH_ENDPOINT=bblfsh:9432
-    --name gitbase
+$ docker run --publish 3306:3306 \
+    --link bblfsh \
+    --volume ~/gitbase/repos:/opt/repos \
+    --env BBLFSH_ENDPOINT=bblfsh:9432 \
+    --name gitbase \
     srcd/gitbase:latest
 ```
 
@@ -43,12 +40,11 @@ $ docker run
 Once bblfsh and gitbase are running and accessible, you can serve the playground:
 
 ```bash
-$ docker run -d
-    --publish 8080:8080
-    --link gitbase
-    --env GITBASEPG_ENV=dev
-    --env GITBASEPG_DB_CONNECTION="gitbase@tcp(gitbase:3306)/none?maxAllowedPacket=4194304"
-    --name gitbase_playground
+$ docker run -d --publish 8080:8080 \
+    --link gitbase \
+    --env GITBASEPG_ENV=dev \
+    --env GITBASEPG_DB_CONNECTION="gitbase@tcp(gitbase:3306)/none?maxAllowedPacket=4194304" \
+    --name gitbase_playground \
    srcd/gitbase-playground:latest
 ```
 
