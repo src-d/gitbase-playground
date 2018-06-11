@@ -1,28 +1,24 @@
-# client-go [![GoDoc](https://godoc.org/gopkg.in/bblfsh/client-go.v2?status.svg)](https://godoc.org/gopkg.in/bblfsh/client-go.v2) [![Build Status](https://travis-ci.org/bblfsh/client-go.svg?branch=master)](https://travis-ci.org/bblfsh/client-go) [![Build status](https://ci.appveyor.com/api/projects/status/github/bblfsh/client-go?svg=true)](https://ci.appveyor.com/project/mcuadros/client-go) [![codecov](https://codecov.io/gh/bblfsh/client-go/branch/master/graph/badge.svg)](https://codecov.io/gh/bblfsh/client-go)
+# README
 
-[Babelfish](https://doc.bblf.sh) Go client library provides functionality to both
-connecting to the Babelfish server for parsing code
-(obtaining an [UAST](https://doc.bblf.sh/uast/specification.html) as a result)
-and for analysing UASTs with the functionality provided by [libuast](https://github.com/bblfsh/libuast).
+[Babelfish](https://doc.bblf.sh) Go client library provides functionality to both connecting to the Babelfish server for parsing code \(obtaining an [UAST](https://doc.bblf.sh/uast/specification.html) as a result\) and for analysing UASTs with the functionality provided by [libuast](https://github.com/bblfsh/libuast).
 
 ## Installation
 
-The recommended way to install *client-go* is:
+The recommended way to install _client-go_ is:
 
-```sh
+```bash
 go get -d -u gopkg.in/bblfsh/client-go.v2/...
 cd $GOPATH/src/gopkg.in/bblfsh/client-go.v2
 make dependencies
 ```
 
-Windows build is supported, provided by you have `make` and `curl` in your `%PATH%`.
-It is also possible to link against custom `libuast` on Windows, read [WINDOWS.md](WINDOWS.md).
+Windows build is supported, provided by you have `make` and `curl` in your `%PATH%`. It is also possible to link against custom `libuast` on Windows, read [WINDOWS.md](windows.md).
 
 ## Example
 
 This small example illustrates how to retrieve the [UAST](https://doc.bblf.sh/uast/specification.html) from a small Python script.
 
-If you don't have a bblfsh server installed, please read the [getting started](https://doc.bblf.sh/user/getting-started.html) guide, to learn more about how to use and deploy a bblfsh server. 
+If you don't have a bblfsh server installed, please read the [getting started](https://doc.bblf.sh/user/getting-started.html) guide, to learn more about how to use and deploy a bblfsh server.
 
 Go to the[quick start](https://github.com/bblfsh/bblfshd#quick-start) to discover how to run Babelfish with Docker.
 
@@ -46,7 +42,7 @@ for _, n := range nodes {
 }
 ```
 
-```
+```text
 Import {
 .  Roles: Import,Declaration,Statement
 .  StartPosition: {
@@ -100,4 +96,5 @@ Please read the [Babelfish clients](https://doc.bblf.sh/user/language-clients.ht
 
 ## License
 
-Apache License 2.0, see [LICENSE](LICENSE)
+Apache License 2.0, see [LICENSE](https://github.com/src-d/gitbase-playground/tree/11b016900612037802e94240c5e73e9ea6770d36/vendor/gopkg.in/bblfsh/client-go.v2/LICENSE/README.md)
+

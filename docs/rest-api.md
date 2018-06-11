@@ -1,15 +1,14 @@
-# Rest API
+# rest-api
 
 ## GET /schema
 
-Returns the database schema as a list of tables and columns for each table.
-See below for more details.
+Returns the database schema as a list of tables and columns for each table. See below for more details.
 
 ```bash
 curl -X GET http://localhost:8080/schema
 ```
 
-```json
+```javascript
 {
     "status": 200,
     "data": [
@@ -60,7 +59,6 @@ A failure response will contain:
   * `title`: Error description.
   * `mysqlCode`: Error code reported by MySQL. May not be present for some errors.
 
-
 Some examples follow. A basic query:
 
 ```bash
@@ -73,7 +71,7 @@ curl -X POST \
 }'
 ```
 
-```json
+```javascript
 {
     "status": 200,
     "data": [
@@ -120,7 +118,7 @@ curl -X POST \
 }'
 ```
 
-```json
+```javascript
 {
     "status": 400,
     "errors": [
@@ -145,7 +143,7 @@ curl -X POST \
 }'
 ```
 
-```json
+```javascript
 {
     "status": 200,
     "data": [
@@ -223,7 +221,7 @@ curl -X POST \
 }'
 ```
 
-```json
+```javascript
 {
     "status": 200,
     "data": {
@@ -244,9 +242,9 @@ curl -X POST \
 
 The endpoint also receives additional parameters:
 
-- `serverUrl` - allows to override bblfsh server url.
-- `filename` - can be used instead of language. Then the bblfsh server would try to guess the language.
-- `filter` - [xpath query](https://doc.bblf.sh/user/uast-querying.html) to filter the results.
+* `serverUrl` - allows to override bblfsh server url.
+* `filename` - can be used instead of language. Then the bblfsh server would try to guess the language.
+* `filter` - [xpath query](https://doc.bblf.sh/user/uast-querying.html) to filter the results.
 
 ## GET /export
 
@@ -256,8 +254,9 @@ This endpoint is similar to `/query` but returns results as CSV file without LIM
 curl -X GET http://localhost:8080/export?query=select+*+from+repositories
 ```
 
-```json
+```javascript
 id
 /opt/repos/gitbase-playground
 /opt/repos/go-git-fixtures
 ```
+

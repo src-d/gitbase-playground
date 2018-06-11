@@ -1,9 +1,8 @@
-# Quickstart
+# quickstart-manually
 
 You can locally build and deploy `gitbase-playground` and its dependencies using [`docker-compose`](https://docs.docker.com/compose/install/)
 
-If you prefer to run `gitbase-playground` with [`docker-compose`](https://docs.docker.com/compose) (without taking care of the app dependencies), you can follow [the playground compose quickstart](quickstart.md)
-
+If you prefer to run `gitbase-playground` with [`docker-compose`](https://docs.docker.com/compose) \(without taking care of the app dependencies\), you can follow [the playground compose quickstart](quickstart.md)
 
 ## Run bblfsh and gitbase Dependencies
 
@@ -40,7 +39,6 @@ $ docker run \
     srcd/gitbase:latest
 ```
 
-
 ## Run gitbase-playground
 
 Once bblfsh and gitbase are running and accessible, you can serve the playground:
@@ -56,11 +54,11 @@ $ docker run -d \
    srcd/gitbase-playground:latest
 ```
 
-Once the server is running &ndash;with its default values&ndash;, it will be accessible through: http://localhost:8080
+Once the server is running –with its default values–, it will be accessible through: [http://localhost:8080](http://localhost:8080)
 
-You have more information about the [playground architecture](CONTRIBUTING.md#architecture), [development guides](CONTRIBUTING.md#development) and [configuration options](CONTRIBUTING.md#configuration) in the [CONTRIBUTING.md](CONTRIBUTING.md).
-
+You have more information about the [playground architecture](contributing.md#architecture), [development guides](contributing.md#development) and [configuration options](contributing.md#configuration) in the [CONTRIBUTING.md](contributing.md).
 
 ## Run a Query
 
 You will find more info about how to run queries using the playground API on the [rest-api guide](rest-api.md)
+
