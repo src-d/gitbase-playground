@@ -1,4 +1,4 @@
-# README
+# Gitbase playground
 
 [![Build Status](https://travis-ci.org/src-d/gitbase-playground.svg)](https://travis-ci.org/src-d/gitbase-playground) [![codecov.io](https://codecov.io/github/src-d/gitbase-playground/coverage.svg)](https://codecov.io/github/src-d/gitbase-playground) ![unstable](https://svg-badge.appspot.com/badge/stability/unstable?a)
 
@@ -6,7 +6,7 @@
 
 Web application to query git repositories using SQL. Powered by [gitbase](https://github.com/src-d/gitbase).
 
-![Screenshot](https://github.com/src-d/gitbase-playground/tree/11b016900612037802e94240c5e73e9ea6770d36/.github/screenshot.png?raw=true)
+![gitbase design mockup](.gitbook/assets/40638423-2742904c-6303-11e8-84d0-500eb35ed092.png)
 
 ## Usage
 

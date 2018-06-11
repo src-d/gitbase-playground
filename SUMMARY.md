@@ -1,6 +1,6 @@
 # Table of contents
 
-* [README](README.md)
+* [Gitbase playground](README.md)
 
 ## playground documentation
 
