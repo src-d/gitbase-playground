@@ -42,19 +42,19 @@ If you want to build and run the playground from sources instead of using the la
 $ GITBASEPG_REPOS_FOLDER=./repos make compose-serve
 ```
 
-## Stop the Application
+## Stop the application
 
 To kill the running containers just `Ctrl+C`
 
 To delete the containers run `docker-compose rm -f`
 
-## Access to the Playground and Run a Query
+## Access the playground and execute a query
 
 Once the server is running –with its default values–, it will be accessible through: [http://localhost:8080](http://localhost:8080)
 
 You will find more info about how to run queries using the playground API on the [rest-api guide](rest-api.md)
 
-## More Info
+## More information
 
-You have more information about the [playground architecture](contributing.md#architecture), [development guides](contributing.md#development) and [configuration options](contributing.md#configuration) in the [CONTRIBUTING.md](contributing.md).
+You have more information about the [playground architecture](contributing.md#architecture), [development guides](contributing.md#development) and [configuration options](contributing.md#configuration) in the [Contribution Guidelines](contributing.md).
 
