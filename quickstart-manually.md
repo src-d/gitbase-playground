@@ -1,10 +1,10 @@
-# quickstart-manually
+# Manual quick start
 
 You can locally build and deploy `gitbase-playground` and its dependencies using [`docker-compose`](https://docs.docker.com/compose/install/)
 
-If you prefer to run `gitbase-playground` with [`docker-compose`](https://docs.docker.com/compose) \(without taking care of the app dependencies\), you can follow [the playground compose quickstart](quickstart.md)
+If you prefer to run `gitbase-playground` with [`docker-compose`](https://docs.docker.com/compose) \(without taking care of the app dependencies\), you can follow [the docker-compose quick start](quickstart.md).
 
-## Run bblfsh and gitbase Dependencies
+## Run bblfsh and gitbase dependencies
 
 It is recommended to read about `bblfsh` and `gitbase` from its own documentation, but here is a small guide about how to run both easily:
 
@@ -58,7 +58,7 @@ Once the server is running –with its default values–, it will be accessible 
 
 You have more information about the [playground architecture](contributing.md#architecture), [development guides](contributing.md#development) and [configuration options](contributing.md#configuration) in the [CONTRIBUTING.md](contributing.md).
 
-## Run a Query
+## Execute a query
 
 You will find more info about how to run queries using the playground API on the [rest-api guide](rest-api.md)
 

@@ -1,4 +1,4 @@
-# quickstart
+# Quick start with docker-compose
 
 You can locally build and deploy `gitbase-playground` and its dependencies using [`docker-compose`](https://docs.docker.com/compose/install/). Docker compose will run three different containers: for the playground frontend itself, gitbase and bblfsh services. It will be the [latest gitbase version](https://hub.docker.com/r/srcd/gitbase/tags/) and [latest bblfsh version](https://hub.docker.com/r/bblfsh/bblfshd/tags/).
 

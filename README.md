@@ -12,7 +12,7 @@ Web application to query git repositories using SQL. Powered by [gitbase](https:
 
 ### Dependencies
 
-The playground will run the queries against a [gitbase](https://github.com/src-d/gitbase) server, and will request UASTs to a [bblfsh](https://doc.bblf.sh/) server; both should be accessible for the playground; you can check its default [configuration values](docs/contributing.md#configuration).
+The playground will run the queries against a [gitbase](https://github.com/src-d/gitbase) server, and will request UASTs to a [bblfsh](https://doc.bblf.sh/) server; both should be accessible for the playground; you can check its default [configuration values](contributing.md#configuration).
 
 ### Run the Playground
 
@@ -20,7 +20,7 @@ You can run the app from a docker image, a released binary or installing and bui
 
 Once the server is running –with its default values–, it will be accessible through: [http://localhost:8080](http://localhost:8080)
 
-Read [more about how to run bblfsh and gitbase dependencies](docs/quickstart.md).
+Read [more about how to run bblfsh and gitbase dependencies](quickstart.md).
 
 #### Run with Docker
 
@@ -45,7 +45,7 @@ $ /download/path/gitbase-playground
 
 ## Contribute
 
-[Contributions](https://github.com/src-d/gitbase-playground/issues) are more than welcome, if you are interested please take a look to our [Contributing Guidelines](docs/contributing.md). You have more information on how to run it locally for [development purposes here](docs/contributing.md#development).
+[Contributions](https://github.com/src-d/gitbase-playground/issues) are more than welcome, if you are interested please take a look to our [Contributing Guidelines](contributing.md). You have more information on how to run it locally for [development purposes here](contributing.md#development).
 
 ## Code of Conduct
 

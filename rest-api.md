@@ -1,4 +1,4 @@
-# rest-api
+# REST API
 
 ## GET /schema
 

@@ -1,14 +1,32 @@
 # Table of contents
 
 * [README](README.md)
-* [docs](docs/README.md)
-  * [CONTRIBUTING](docs/contributing.md)
-  * [quickstart-manually](docs/quickstart-manually.md)
-  * [rest-api](docs/rest-api.md)
-  * [quickstart](docs/quickstart.md)
-* [vendor](vendor/README.md)
-  * [gopkg.in](vendor/gopkg.in/README.md)
-    * [bblfsh](vendor/gopkg.in/bblfsh/README.md)
-      * [README](vendor/gopkg.in/bblfsh/client-go.v2/README.md)
-        * [WINDOWS](vendor/gopkg.in/bblfsh/client-go.v2/windows.md)
+
+## playground documentation
+
+* [Quick start with docker-compose](quickstart.md)
+* [Manual quick start](quickstart-manually.md)
+* [REST API](rest-api.md)
+* [Contribution Guidelines](contributing.md)
+
+## source{d} documentation
+
+* [Babelfish documentation](https://docs.sourced.tech/babelfish)
+* [Gitbase documentation](https://docs.sourced.tech/gitbase)
+* [Engine documentation](https://docs.sourced.tech/engine)
+* [sourced.ml documentation](https://docs.sourced.tech/sourced-ml)
+
+## Community
+
+* [Join us on Slack](https://join.slack.com/t/sourced-community/shared_invite/enQtMjc4Njk5MzEyNzM2LTFjNzY4NjEwZGEwMzRiNTM4MzRlMzQ4MmIzZjkwZmZlM2NjODUxZmJjNDI1OTcxNDAyMmZlNmFjODZlNTg0YWM)
+* [Follow us on Twitter](https://twitter.com/sourcedtech)
+
+## Resources
+
+* [MLonCode research](https://github.com/src-d/awesome-machine-learning-on-source-code)
+
+## source{d}
+
+* [Careers](https://sourced.tech/careers)
+* [Blog](https://blog.sourced.tech/)
 
