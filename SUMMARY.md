@@ -4,10 +4,10 @@
 
 ## playground documentation
 
-* [Quick start with docker-compose](quickstart.md)
-* [Manual quick start](quickstart-manually.md)
-* [REST API](rest-api.md)
-* [Contribution Guidelines](contributing.md)
+* [Quick start with docker-compose](documentation/quickstart.md)
+* [Manual quick start](documentation/quickstart-manually.md)
+* [REST API](documentation/rest-api.md)
+* [Contribution Guidelines](documentation/contributing.md)
 
 ## source{d} documentation
 
