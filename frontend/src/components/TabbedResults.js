@@ -223,7 +223,7 @@ class TabbedResults extends Component {
             <Tab
               key="history"
               eventKey="history"
-              tabClassName="history"
+              tabClassName="history-tab-title"
               title={
                 <div className="history-tab">
                   <span className="icon-bg">
