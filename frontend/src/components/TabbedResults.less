@@ -34,6 +34,10 @@
     .query-row {
         margin-bottom: 2em;
 
+        .query-text, .edit-query {
+            line-height: 16px;
+        }
+
         .query-text {
             white-space: pre;
             font-family: @monospace-font;
@@ -42,14 +46,14 @@
             max-width: 85%;
             overflow: auto;
         }
-    }
 
-    button.edit-query {
-        width: auto;
-        float: left;
-        padding-top: 0px;
-        margin-left: 1ex;
-        border-top: 0px;
+        .edit-query {
+            width: auto;
+            float: left;
+            padding-top: 0px;
+            margin-left: 1ex;
+            border-top: 0px;
+        }
     }
 
     button.reload {
