@@ -86,7 +86,7 @@ class TabTitle extends Component {
     return (
       <OverlayTrigger
         placement="top"
-        delay={1000}
+        delay={500}
         overlay={
           <Popover className="tab-popover" id={`tooltip-${tabKey}`}>
             {title}
