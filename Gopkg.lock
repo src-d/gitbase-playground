@@ -181,12 +181,12 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:810d960260b42c751f5254f6dbff5e6c79c8047b90a9bf4a06bba479b99aff1d"
+  digest = "1:f250ca51e5b9215bc2df18f92060a9a835e9f85ab18ebbba0e1a6ef1f8fcdbfe"
   name = "github.com/rs/cors"
   packages = ["."]
   pruneopts = "NUT"
-  revision = "ca016a06a5753f8ba03029c0aa5e54afb1bf713f"
-  version = "v1.4.0"
+  revision = "9a47f48565a795472d43519dd49aac781f3034fb"
+  version = "v1.6.0"
 
 [[projects]]
   digest = "1:e256b859ab89f005f2f639f5ed9807d0873d9135e27c6382f419b840ff9abe71"
