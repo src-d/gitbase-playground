@@ -8365,7 +8365,8 @@ react-app-rewire-less@^2.1.1:
 
 react-app-rewire-svg-react-loader@codebandits/react-app-rewire-svg-react-loader:
   version "1.0.0"
-  resolved "https://codeload.github.com/codebandits/react-app-rewire-svg-react-loader/tar.gz/edc3cdb0b77e738dcfabde861e437e558fd84354"
+  uid "1fc7da4e5847782b7152fa57c42ef84270d26d0e"
+  resolved "https://codeload.github.com/codebandits/react-app-rewire-svg-react-loader/tar.gz/1fc7da4e5847782b7152fa57c42ef84270d26d0e"
   dependencies:
     svg-react-loader "^0.4.5"
 
