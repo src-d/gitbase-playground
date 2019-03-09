@@ -10216,10 +10216,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-uast-viewer@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/uast-viewer/-/uast-viewer-0.2.0.tgz#081cc7f2f67bf5db03dc53cd8a451f491c49e699"
-  integrity sha512-BTYLYY6xSu0ITjC4lO2Kb14Nw4oYKh7i3mChf4HygNJRTJ93FHaYTmyqS38cA3+1FsGnEyKSz+BwATGONLJPDQ==
+uast-viewer@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/uast-viewer/-/uast-viewer-0.4.0.tgz#38ff7509323468ea37044116560a4d849365528a"
+  integrity sha512-1Q2b6bJr4JLeANADFaN2/LgOUvFo+1lWtweVkbYXr0MFpioVhlpaw+Z+1ygGcnGwoJ0MR96jBg4Eqb8PtA6RJQ==
 
 uglify-js@3.4.x, uglify-js@^3.0.13:
   version "3.4.3"
