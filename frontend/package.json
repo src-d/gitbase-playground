@@ -14,7 +14,7 @@
     "react-codemirror2": "^5.0.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.1.8",
     "react-split-pane": "^0.1.87",
     "react-switch": "^4.1.0",
     "react-table": "^6.9.2",
@@ -44,7 +44,7 @@
     "prettier": "^1.16.4",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewire-svg-react-loader": "codebandits/react-app-rewire-svg-react-loader",
-    "react-app-rewired": "^1.5.2",
+    "react-app-rewired": "^2.1.1",
     "react-test-renderer": "^16.8.6",
     "whatwg-url": "^7.0.0"
   },
