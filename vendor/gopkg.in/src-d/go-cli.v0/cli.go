@@ -23,8 +23,21 @@ type App struct {
 	deferFuncs []DeferFunc
 }
 
-// New creates a new App, including default values.
+// New creates a new App, including default values and sub commands.
 func New(name, version, build, description string) *App {
+	app := NewNoDefaults(name, description)
+
+	app.AddCommand(&VersionCommand{
+		Name:    name,
+		Version: version,
+		Build:   build,
+	})
+
+	return app
+}
+
+// NewNoDefaults creates a new App, without any of the default sub commands.
+func NewNoDefaults(name, description string) *App {
 	parser := flags.NewNamedParser(name, flags.Default)
 	parser.LongDescription = description
 	app := &App{
@@ -33,12 +46,6 @@ func New(name, version, build, description string) *App {
 	}
 
 	app.Parser.CommandHandler = app.commandHandler
-
-	app.AddCommand(&VersionCommand{
-		Name:    name,
-		Version: version,
-		Build:   build,
-	})
 
 	return app
 }
