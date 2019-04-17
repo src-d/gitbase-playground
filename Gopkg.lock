@@ -409,11 +409,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:d7584e5306287c1de78a8de5e0d4e76cf556b6db1cc8025571f0d61f2327bc8b"
+  digest = "1:1d3d35b3994a6b917bff669292a182ff9c806e320df11f3645b639cbbb0d46c6"
   name = "gopkg.in/src-d/go-cli.v0"
   packages = ["."]
   pruneopts = "NUT"
-  revision = "d492247bbc0df2be12b7767179b14ea23430964f"
+  revision = "7fe0cee18d1631fb2be0c80716a43494f74f7643"
 
 [[projects]]
   digest = "1:e79c76b3315c08c2c9d4d09d308ef2be7e4a4161fdcbe5c56040b3641f21096c"
