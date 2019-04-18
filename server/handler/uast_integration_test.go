@@ -11,6 +11,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/pressly/lg"
 	"github.com/sirupsen/logrus"
+	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"gopkg.in/src-d/enry.v1"
 
@@ -49,14 +50,12 @@ func UnmarshalGetLanguagesResponse(b []byte) []service.Language {
 }
 
 func (suite *UASTGetLanguagesSuite) TestSameEnryLanguage() {
-	require := suite.Require()
-
 	req, _ := http.NewRequest("GET", "/get-languages", strings.NewReader(""))
 
 	res := httptest.NewRecorder()
 	suite.handler.ServeHTTP(res, req)
 
-	require.Equal(http.StatusOK, res.Code, res.Body.String())
+	suite.Require().Equal(http.StatusOK, res.Code, res.Body.String())
 
 	escapeForJSON := func(s string) string {
 		return strings.Replace(strings.Replace(s, "\"", "\\\"", -1),
@@ -66,6 +65,8 @@ func (suite *UASTGetLanguagesSuite) TestSameEnryLanguage() {
 	for _, lang := range UnmarshalGetLanguagesResponse(res.Body.Bytes()) {
 		langName := lang.Name
 		suite.T().Run(langName, func(t *testing.T) {
+			require := require.New(t)
+
 			content, filename := suite.getContentAndFilename(langName)
 			jsonRequest := fmt.Sprintf(`{ "content": "%s", "filename": "%s" }`,
 				escapeForJSON(content), filename)
