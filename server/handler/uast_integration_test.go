@@ -100,9 +100,9 @@ func (suite *UASTGetLanguagesSuite) getContentAndFilename(lang string) (string, 
 		return `
 class HelloWorldProgram
 {
-    public static void Main()\n
+    public static void Main()
     {
-        System.Console.WriteLine("Hello, world!");\n
+        System.Console.WriteLine("Hello, world!");
     }
 }
 `, "hello.cs"
