@@ -41,7 +41,7 @@ func (suite *DetectLangSuite) TestOnlyContent() {
 
 	suite.Equal(http.StatusOK, res.Code)
 
-	lang, langType := langResponse(res.Body.Bytes())
+	lang, langType := UnmarshalDetectLangResponse(res.Body.Bytes())
 	suite.Equal("JavaScript", lang)
 	suite.Equal(enry.Programming, langType)
 }
@@ -55,7 +55,7 @@ func (suite *DetectLangSuite) TestOnlyFilename() {
 
 	suite.Equal(http.StatusOK, res.Code)
 
-	lang, langType := langResponse(res.Body.Bytes())
+	lang, langType := UnmarshalDetectLangResponse(res.Body.Bytes())
 	suite.Equal("JavaScript", lang)
 	suite.Equal(enry.Programming, langType)
 }
@@ -69,7 +69,7 @@ func (suite *DetectLangSuite) TestDetect() {
 
 	suite.Equal(http.StatusOK, res.Code)
 
-	lang, langType := langResponse(res.Body.Bytes())
+	lang, langType := UnmarshalDetectLangResponse(res.Body.Bytes())
 	suite.Equal("MATLAB", lang)
 	suite.Equal(enry.Programming, langType)
 }
@@ -83,12 +83,12 @@ func (suite *DetectLangSuite) TestUnknownContent() {
 
 	suite.Equal(http.StatusOK, res.Code)
 
-	lang, langType := langResponse(res.Body.Bytes())
+	lang, langType := UnmarshalDetectLangResponse(res.Body.Bytes())
 	suite.Equal("", lang)
 	suite.Equal(enry.Unknown, langType)
 }
 
-func langResponse(b []byte) (string, enry.Type) {
+func UnmarshalDetectLangResponse(b []byte) (string, enry.Type) {
 	var resBody struct {
 		Data struct {
 			Language string `json:"language"`
