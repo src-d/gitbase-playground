@@ -1,8 +1,8 @@
 package handler_test
 
 import (
+	"bytes"
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -57,20 +57,17 @@ func (suite *UASTGetLanguagesSuite) TestSameEnryLanguage() {
 
 	suite.Require().Equal(http.StatusOK, res.Code, res.Body.String())
 
-	escapeForJSON := func(s string) string {
-		return strings.Replace(strings.Replace(s, "\"", "\\\"", -1),
-			"\n", "\\n", -1)
-	}
-
 	for _, lang := range UnmarshalGetLanguagesResponse(res.Body.Bytes()) {
 		langName := lang.Name
 		suite.T().Run(langName, func(t *testing.T) {
 			require := require.New(t)
 
 			content, filename := suite.getContentAndFilename(langName)
-			jsonRequest := fmt.Sprintf(`{ "content": "%s", "filename": "%s" }`,
-				escapeForJSON(content), filename)
-			req, _ := http.NewRequest("POST", "/detect-lang", strings.NewReader(jsonRequest))
+			b, _ := json.Marshal(handler.DetectLangRequest{
+				Filename: filename,
+				Content:  content,
+			})
+			req, _ := http.NewRequest("POST", "/detect-lang", bytes.NewReader(b))
 
 			res = httptest.NewRecorder()
 			suite.handler.ServeHTTP(res, req)

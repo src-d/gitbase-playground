@@ -10,7 +10,7 @@ import (
 	"github.com/src-d/gitbase-web/server/serializer"
 )
 
-type detectLangRequest struct {
+type DetectLangRequest struct {
 	Content  string `json:"content"`
 	Filename string `json:"filename"`
 }
@@ -18,7 +18,7 @@ type detectLangRequest struct {
 // DetectLanguage returns a function that detects language by filename and content
 func DetectLanguage() RequestProcessFunc {
 	return func(r *http.Request) (res *serializer.Response, err error) {
-		var req detectLangRequest
+		var req DetectLangRequest
 		body, err := ioutil.ReadAll(r.Body)
 		if err != nil {
 			return nil, err
