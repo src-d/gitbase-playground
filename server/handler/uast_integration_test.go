@@ -1,19 +1,154 @@
 package handler_test
 
 import (
+	"bytes"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
 
+	"github.com/go-chi/chi"
 	"github.com/pressly/lg"
 	"github.com/sirupsen/logrus"
+	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
+	"gopkg.in/src-d/enry.v1"
 
 	"github.com/src-d/gitbase-web/server/handler"
 	"github.com/src-d/gitbase-web/server/serializer"
+	"github.com/src-d/gitbase-web/server/service"
 )
+
+type UASTGetLanguagesSuite struct {
+	suite.Suite
+	handler http.Handler
+}
+
+func TestUASTGetLanguagesSuite(t *testing.T) {
+	if !isIntegration() {
+		t.Skip("use the env var GITBASEPG_INTEGRATION_TESTS=true to run this test")
+	}
+
+	q := new(UASTGetLanguagesSuite)
+	r := chi.NewRouter()
+	r.Use(lg.RequestLogger(logrus.New()))
+	r.Post("/detect-lang", handler.APIHandlerFunc(handler.DetectLanguage()))
+	r.Get("/get-languages", handler.APIHandlerFunc(handler.GetLanguages(bblfshServerURL())))
+
+	q.handler = r
+
+	suite.Run(t, q)
+}
+
+func UnmarshalGetLanguagesResponse(b []byte) []service.Language {
+	var resBody struct {
+		Data []service.Language `json:"data"`
+	}
+	json.Unmarshal(b, &resBody)
+	return resBody.Data
+}
+
+func (suite *UASTGetLanguagesSuite) TestSameEnryLanguage() {
+	req, _ := http.NewRequest("GET", "/get-languages", strings.NewReader(""))
+
+	res := httptest.NewRecorder()
+	suite.handler.ServeHTTP(res, req)
+
+	suite.Require().Equal(http.StatusOK, res.Code, res.Body.String())
+
+	for _, lang := range UnmarshalGetLanguagesResponse(res.Body.Bytes()) {
+		langName := lang.Name
+		suite.T().Run(langName, func(t *testing.T) {
+			require := require.New(t)
+
+			content, filename := suite.getContentAndFilename(langName)
+			b, _ := json.Marshal(handler.DetectLangRequest{
+				Filename: filename,
+				Content:  content,
+			})
+			req, _ := http.NewRequest("POST", "/detect-lang", bytes.NewReader(b))
+
+			res = httptest.NewRecorder()
+			suite.handler.ServeHTTP(res, req)
+
+			require.Equal(http.StatusOK, res.Code, res.Body.String())
+
+			detectedLang, detectedLangType := handler.UnmarshalDetectLangResponse(res.Body.Bytes())
+
+			if langName == "Bash" {
+				require.NotEqual(langName, detectedLang)
+				t.Skip("TEST FAILURE IS A KNOWN ISSUE")
+			}
+
+			require.Equal(langName, detectedLang)
+			require.Equal(enry.Programming, detectedLangType)
+		})
+	}
+}
+
+func (suite *UASTGetLanguagesSuite) getContentAndFilename(lang string) (string, string) {
+	suite.T().Helper()
+
+	switch lang {
+	case "Bash":
+		return "echo 'Hello World!'", "hello.sh"
+	case "C#":
+		return `
+class HelloWorldProgram
+{
+    public static void Main()
+    {
+        System.Console.WriteLine("Hello, world!");
+    }
+}
+`, "hello.cs"
+	case "C++":
+		return `
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello World!" << std::endl;
+  return 0;
+}
+`, "hello.cpp"
+	case "Go":
+		return `
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World!")
+}
+`, "hello.go"
+	case "Java":
+		return `
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+
+}
+`, "hello.java"
+	case "JavaScript":
+		return "console.log('Hello World!')", "hello.js"
+	case "PHP":
+		return `
+<?php
+  echo "Hello World!";
+?>
+`, "hello.php"
+	case "Python":
+		return "print('Hello World!')", "hello.py"
+	case "Ruby":
+		return "puts 'Hello world!'", "hello.rb"
+	}
+
+	return "", ""
+}
 
 type UASTParseSuite struct {
 	suite.Suite
