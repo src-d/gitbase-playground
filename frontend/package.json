@@ -20,7 +20,7 @@
     "react-scripts": "2.1.8",
     "react-split-pane": "^0.1.87",
     "react-switch": "^4.1.0",
-    "react-table": "^6.9.2",
+    "react-table": "^6.10.0",
     "uast-viewer": "^0.4.0"
   },
   "scripts": {
