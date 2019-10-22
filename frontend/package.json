@@ -16,7 +16,7 @@
     "react-bootstrap": "^0.32.1",
     "react-codemirror2": "^5.0.1",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^5.2.1",
     "react-scripts": "2.1.8",
     "react-split-pane": "^0.1.87",
     "react-switch": "^4.1.0",
